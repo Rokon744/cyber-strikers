@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Shield, Zap, Target, User, Crown, ChevronDown, ChevronUp } from "lucide-react";
+import {
+  Shield,
+  Zap,
+  Target,
+  User,
+  Crown,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
 import { players } from "@/data/data";
 import Image from "next/image";
 
@@ -13,13 +21,29 @@ const roleColors: Record<string, string> = {
   "Wicket-Keeper": "text-purple-400 border-purple-400/30 bg-purple-400/5",
 };
 
-const roleFilters = ["All", "Batsman", "Bowler", "All-Rounder", "Wicket-Keeper"];
+const roleFilters = [
+  "All",
+  "Batsman",
+  "Bowler",
+  "All-Rounder",
+  "Wicket-Keeper",
+];
 
-function StatBar({ value, max = 100, label }: { value: number; max?: number; label: string }) {
+function StatBar({
+  value,
+  max = 100,
+  label,
+}: {
+  value: number;
+  max?: number;
+  label: string;
+}) {
   return (
     <div>
       <div className="flex justify-between items-center mb-1">
-        <span className="text-xs text-slate-500 font-body tracking-wider">{label}</span>
+        <span className="text-xs text-slate-500 font-body tracking-wider">
+          {label}
+        </span>
         <span className="text-xs text-neon font-body">{value}</span>
       </div>
       <div className="stat-bar">
@@ -51,7 +75,9 @@ function UglyMeter({ value }: { value: number }) {
   return (
     <div>
       <div className="flex justify-between items-center mb-1">
-        <span className="text-xs text-slate-500 font-body tracking-wider">Ugly Meter</span>
+        <span className="text-xs text-slate-500 font-body tracking-wider">
+          Ugly Meter
+        </span>
         <span className="text-xs font-body" style={{ color: getColor(value) }}>
           {getLabel(value)}
         </span>
@@ -72,9 +98,16 @@ function UglyMeter({ value }: { value: number }) {
   );
 }
 
-function PlayerCard({ player, index }: { player: (typeof players)[0]; index: number }) {
+function PlayerCard({
+  player,
+  index,
+}: {
+  player: (typeof players)[0];
+  index: number;
+}) {
   const [expanded, setExpanded] = useState(false);
-  const roleClass = roleColors[player.role] || "text-slate-400 border-slate-600 bg-slate-800";
+  const roleClass =
+    roleColors[player.role] || "text-slate-400 border-slate-600 bg-slate-800";
 
   return (
     <motion.div
@@ -108,7 +141,8 @@ function PlayerCard({ player, index }: { player: (typeof players)[0]; index: num
         <div
           className="w-36 h-36 relative mb-4 border-2 border-dark-border group-hover:border-neon/40 transition-all duration-300"
           style={{
-            clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+            clipPath:
+              "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
           }}
         >
           <Image
@@ -123,7 +157,9 @@ function PlayerCard({ player, index }: { player: (typeof players)[0]; index: num
           {player.name}
         </h3>
 
-        <span className={`text-xs px-3 py-1 border font-body tracking-widest ${roleClass}`}>
+        <span
+          className={`text-xs px-3 py-1 border font-body tracking-widest ${roleClass}`}
+        >
           {player.role}
         </span>
 
@@ -137,30 +173,42 @@ function PlayerCard({ player, index }: { player: (typeof players)[0]; index: num
         {player.role === "Bowler" ? (
           <>
             <div className="text-center">
-              <p className="font-display font-bold text-lg text-white">{player.stats.wickets}</p>
+              <p className="font-display font-bold text-lg text-white">
+                {player.stats.wickets}
+              </p>
               <p className="text-[10px] text-slate-600 tracking-wider">WKTS</p>
             </div>
             <div className="text-center border-x border-dark-border">
-              <p className="font-display font-bold text-lg text-neon">{player.stats.economy}</p>
+              <p className="font-display font-bold text-lg text-neon">
+                {player.stats.economy}
+              </p>
               <p className="text-[10px] text-slate-600 tracking-wider">ECON</p>
             </div>
             <div className="text-center">
-              <p className="font-display font-bold text-lg text-white">{player.stats.average}</p>
+              <p className="font-display font-bold text-lg text-white">
+                {player.stats.average}
+              </p>
               <p className="text-[10px] text-slate-600 tracking-wider">AVG</p>
             </div>
           </>
         ) : (
           <>
             <div className="text-center">
-              <p className="font-display font-bold text-lg text-white">{player.stats.runs}</p>
+              <p className="font-display font-bold text-lg text-white">
+                {player.stats.runs}
+              </p>
               <p className="text-[10px] text-slate-600 tracking-wider">RUNS</p>
             </div>
             <div className="text-center border-x border-dark-border">
-              <p className="font-display font-bold text-lg text-neon">{player.stats.average}</p>
+              <p className="font-display font-bold text-lg text-neon">
+                {player.stats.average}
+              </p>
               <p className="text-[10px] text-slate-600 tracking-wider">AVG</p>
             </div>
             <div className="text-center">
-              <p className="font-display font-bold text-lg text-white">{player.stats.strikeRate}</p>
+              <p className="font-display font-bold text-lg text-white">
+                {player.stats.strikeRate}
+              </p>
               <p className="text-[10px] text-slate-600 tracking-wider">SR</p>
             </div>
           </>
@@ -173,9 +221,13 @@ function PlayerCard({ player, index }: { player: (typeof players)[0]; index: num
         className="w-full flex items-center justify-center gap-1 py-2 text-xs text-slate-600 hover:text-neon border-t border-dark-border transition-colors duration-200 font-body tracking-widest"
       >
         {expanded ? (
-          <><ChevronUp size={12} /> LESS</>
+          <>
+            <ChevronUp size={12} /> LESS
+          </>
         ) : (
-          <><ChevronDown size={12} /> STATS</>
+          <>
+            <ChevronDown size={12} /> STATS
+          </>
         )}
       </button>
 
@@ -192,12 +244,22 @@ function PlayerCard({ player, index }: { player: (typeof players)[0]; index: num
             <div className="px-6 py-4 space-y-3">
               <StatBar value={player.stats.skillLevel} label="Skill Level" />
               <UglyMeter value={player.stats.uglyMeter} />
-              {player.stats.wickets !== undefined && player.role !== "Wicket-Keeper" && (
-                <StatBar value={player.stats.wickets} max={50} label="Wickets" />
-              )}
-              {player.stats.dismissals !== undefined && (
-                <StatBar value={player.stats.dismissals} max={50} label="Dismissals" />
-              )}
+              {player.stats.wickets !== undefined &&
+                player.role !== "Wicket-Keeper" && (
+                  <StatBar
+                    value={player.stats.wickets}
+                    max={50}
+                    label="Wickets"
+                  />
+                )}
+              {/* {"dismissals" in player.stats &&
+                player.stats.dismissals !== undefined && (
+                  <StatBar
+                    value={player.stats.dismissals}
+                    max={50}
+                    label="Dismissals"
+                  />
+                )} */}
             </div>
           </motion.div>
         )}
@@ -209,9 +271,10 @@ function PlayerCard({ player, index }: { player: (typeof players)[0]; index: num
 export default function SquadPage() {
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const filtered = activeFilter === "All"
-    ? players
-    : players.filter((p) => p.role === activeFilter);
+  const filtered =
+    activeFilter === "All"
+      ? players
+      : players.filter((p) => p.role === activeFilter);
 
   return (
     <div className="min-h-screen bg-dark-base bg-grid pt-24 pb-16 px-4 sm:px-6">
@@ -223,12 +286,16 @@ export default function SquadPage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <p className="text-xs text-neon tracking-[0.4em] mb-3 font-body">MEET THE WARRIORS</p>
+          <p className="text-xs text-neon tracking-[0.4em] mb-3 font-body">
+            MEET THE WARRIORS
+          </p>
           <h1 className="font-display font-bold text-4xl sm:text-6xl text-white tracking-wider mb-4">
             THE SQUAD
           </h1>
           <div className="h-px w-24 bg-neon/40 mx-auto" />
-          <p className="text-slate-500 text-sm mt-4 font-body">{players.length} Players · Season 2025</p>
+          <p className="text-slate-500 text-sm mt-4 font-body">
+            {players.length} Players · Season 2025
+          </p>
         </motion.div>
 
         {/* Role Filters */}
@@ -254,7 +321,10 @@ export default function SquadPage() {
         </motion.div>
 
         {/* Squad Grid */}
-        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <motion.div
+          layout
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+        >
           <AnimatePresence>
             {filtered.map((player, i) => (
               <PlayerCard key={player.id} player={player} index={i} />
@@ -274,10 +344,22 @@ export default function SquadPage() {
             STAT GUIDE
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-body text-slate-600">
-            <div><span className="text-slate-400">Skill Level</span> — Overall player rating (0-100)</div>
-            <div><span className="text-slate-400">Ugly Meter</span> — A fun chaos rating unique to CS</div>
-            <div><span className="text-slate-400">SR</span> — Strike Rate (runs per 100 balls)</div>
-            <div><span className="text-slate-400">Econ</span> — Runs conceded per over</div>
+            <div>
+              <span className="text-slate-400">Skill Level</span> — Overall
+              player rating (0-100)
+            </div>
+            <div>
+              <span className="text-slate-400">Ugly Meter</span> — A fun chaos
+              rating unique to CS
+            </div>
+            <div>
+              <span className="text-slate-400">SR</span> — Strike Rate (runs per
+              100 balls)
+            </div>
+            <div>
+              <span className="text-slate-400">Econ</span> — Runs conceded per
+              over
+            </div>
           </div>
         </motion.div>
       </div>
