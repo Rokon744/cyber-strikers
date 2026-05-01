@@ -338,10 +338,10 @@ export default function FixturesPage() {
           className="mt-16 border border-dark-border bg-dark-card p-6 clip-card grid grid-cols-2 sm:grid-cols-4 gap-6"
         >
           {[
-            { label: "TEAMS", value: "8" },
-            { label: "MATCHES", value: "7" },
-            { label: "COMPLETED", value: "3" },
-            { label: "REMAINING", value: "4" },
+            { label: "TEAMS", value: "7" },
+            { label: "MATCHES", value: "6" },
+            { label: "COMPLETED", value: "0" },
+            { label: "REMAINING", value: "6" },
           ].map(({ label, value }) => (
             <div key={label} className="text-center">
               <p className="font-display font-bold text-3xl text-neon">{value}</p>

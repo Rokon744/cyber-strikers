@@ -95,7 +95,7 @@ const Footer = () => {
             {[
               { label: "Squad", href: "/squad" },
               { label: "Fixtures", href: "/fixtures" },
-              { label: "Live Score", href: "/live-score" },
+              { label: "News & Gallery", href: "/news" },
             ].map(({ label, href }) => (
               <a
                 key={label}
