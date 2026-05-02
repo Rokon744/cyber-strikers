@@ -78,7 +78,7 @@ export const players = [
       runs: 512,
       average: 41.0,
       strikeRate: 138,
-      skillLevel: 81,
+      skillLevel: 93,
       uglyMeter: 22,
     },
     matches: 20,
