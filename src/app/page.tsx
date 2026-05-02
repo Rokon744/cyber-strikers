@@ -66,7 +66,7 @@ function NewsCard({
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon/0 to-transparent group-hover:via-neon/50 transition-all duration-500" />
 
       {/* Cover Image */}
-      <div className="relative h-60 overflow-hidden">
+      <div className="relative h-40 md:h-60 overflow-hidden">
         <Image
           src={item.image}
           alt={item.title}
@@ -75,16 +75,6 @@ function NewsCard({
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-dark-card via-dark-card/40 to-transparent" />
-
-        {/* Category badge — sits on the image */}
-        <div className="absolute top-3 left-3">
-          <span
-            className={`inline-flex items-center gap-1 px-2.5 py-1 border text-[10px] font-body tracking-widest ${catClass}`}
-          >
-            <Tag size={9} />
-            {item.category}
-          </span>
-        </div>
       </div>
 
       {/* Content */}

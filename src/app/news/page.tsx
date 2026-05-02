@@ -50,7 +50,7 @@ function NewsCard({
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon/0 to-transparent group-hover:via-neon/50 transition-all duration-500" />
 
       {/* Cover Image */}
-      <div className="relative h-60 overflow-hidden">
+      <div className="relative h-40 md:h-60 overflow-hidden">
         <Image
           src={item.image}
           alt={item.title}
