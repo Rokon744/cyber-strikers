@@ -146,6 +146,8 @@ export default function LiveScorecard() {
 
   // Determine on-strike batsman by asterisk
   const bat1OnStrike = data.batsman1.includes("*");
+  console.log(data.runs);
+  
 
   return (
     <div className="min-h-screen flex items-start sm:items-center justify-center bg-[#030712] p-3 sm:p-6 pt-6"
@@ -185,7 +187,7 @@ export default function LiveScorecard() {
               <LiveBadge />
               <div className="w-px h-4 bg-[#1c2333]" />
               <span className="text-[10px] text-slate-500 tracking-[0.25em]" style={{ fontFamily: "'Share Tech Mono',monospace" }}>
-                T20 · CYBER CUP 2025
+                T8 · CYBER CUP 2025
               </span>
             </div>
             <div className="flex items-center gap-2">

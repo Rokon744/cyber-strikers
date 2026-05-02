@@ -24,7 +24,7 @@ export interface ScorecardData {
 
 const SHEET_ID   = "1tEYkt6hIZOnRhY855gAqJQXvNw6C49nBkqAGjkBDM0Y";
 const SHEET_NAME = "Sheet1";
-const CSV_URL    = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(SHEET_NAME)}`;
+const CSV_URL    = `https://docs.google.com/spreadsheets/d/e/2PACX-1vSOvRCcuAjEb8uZYdPgB7mWT64UWm7J2NGEmLxfClsq9zW_3jx8TdTausil5lEh3U6FBj3fN6OvLHLv/pub?output=csv`;
 
 function parseCSVRow(row: string): string[] {
   const result: string[] = [];
@@ -44,7 +44,7 @@ function parseCSVRow(row: string): string[] {
 }
 
 export async function fetchScorecardFromSheet(): Promise<ScorecardData> {
-  const res = await fetch(CSV_URL, { cache: "no-store", headers: { "Cache-Control": "no-cache" } });
+  const res = await fetch(CSV_URL, { next: { revalidate: 0 } });
   if (!res.ok) throw new Error(`Sheet fetch failed — HTTP ${res.status}`);
   const text  = await res.text();
   const lines = text.trim().split("\n").filter((l) => l.trim());
