@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/squad", label: "Squad", icon: Users },
   { href: "/fixtures", label: "Fixtures", icon: Calendar },
   { href: "/news", label: "NEWS & GALLERY", icon: Newspaper },
+  { href: "/live-score", label: "Live Score", icon: Radio },
 ];
 
 export default function Navbar() {
