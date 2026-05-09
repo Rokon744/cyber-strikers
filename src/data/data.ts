@@ -10,7 +10,7 @@ import best_bowler from "../app/assets/best-bowler.png";
 import captain from "../app/assets/captain.png";
 
 // Images
-import { juba, shimir, siam, sajid, nasim, tareq, sobuj, nobel, niloy, maruf, terminated } from "./images";
+import { juba, shimir, siam, sajid, nasim, tareq, sobuj, nobel, niloy, maruf, terminated, lost } from "./images";
 
 export const teamInfo = {
   name: "Cyber Strikers",
@@ -19,7 +19,7 @@ export const teamInfo = {
   captain: "Md Rokon",
   homeGround: "Rajshahi",
   wins: 4,
-  losses: 1,
+  losses: 2,
   trophies: 1,
 };
 
@@ -259,9 +259,9 @@ export const tournament = {
       date: "May 9, 2026",
       time: "08:00 AM",
       venue: "RPI CENTRAL FIELD",
-      winner: null,
-      scoreA: null,
-      scoreB: null,
+      winner: "Binary Titans - CST/7/2",
+      scoreA: 159,
+      scoreB: 160,
     },
     {
       id: "qf2",
@@ -270,9 +270,9 @@ export const tournament = {
       date: "May 9, 2026",
       time: "10:00 AM",
       venue: "RPI CENTRAL FIELD",
-      winner: null,
-      scoreA: null,
-      scoreB: null,
+      winner: "7/1 Warriors - CST/7/1",
+      scoreA: 49,
+      scoreB: 133,
     },
     {
       id: "qf3",
@@ -281,18 +281,18 @@ export const tournament = {
       date: "May 9, 2026",
       time: "03:00 PM",
       venue: "RPI CENTRAL FIELD",
-      winner: null,
-      scoreA: null,
-      scoreB: null,
+      winner: "Silicon Superstars - CST/3/2",
+      scoreA: 86,
+      scoreB: 140,
     },
     {
       id: "qf4",
-      teamA: "Teachers Group",
-      teamB: "TBD",
+      teamA: "TBD",
+      teamB: "Teachers Group",
       date: "Auto",
       time: "00:00 PM",
       venue: "RPI CENTRAL FIELD",
-      winner: null,
+      winner: "Teachers Group",
       scoreA: null,
       scoreB: null,
     },
@@ -300,8 +300,8 @@ export const tournament = {
   semiFinals: [
     {
       id: "sf1",
-      teamA: "TBD",
-      teamB: "TBD",
+      teamA: "Binary Titans - CST/7/2",
+      teamB: "Silicon Superstars - CST/3/2",
       date: "10 May, 2026",
       time: "08:00 AM",
       venue: "RPI CENTRAL FIELD",
@@ -312,7 +312,7 @@ export const tournament = {
     {
       id: "sf2",
       teamA: "Teachers Group",
-      teamB: "TBD",
+      teamB: "7/1 Warriors - CST/7/1",
       date: "10 May, 2026",
       time: "10:00 AM",
       venue: "RPI CENTRAL FIELD",
@@ -383,6 +383,15 @@ export const liveScore = {
 
 export const newsItems = [
   {
+    id: -2,
+    title: "This Is Not The End 💙🏏",
+    date: "2025-05-09",
+    description:
+      "হয়তো এইবার আমরা হেরে গেছি, কিন্তু আমাদের মনোবল এখনো অটুট। 💪 প্রতিটি হারই নতুন করে ফিরে আসার শক্তি দেয়।আজকের এই শেষটাই আগামী সিজনের নতুন শুরুর গল্প। 🔥দেখা হবে Next Season-এ — আরও শক্তিশালী Cyber Strikers নিয়ে! 🚀",
+    image: lost,
+    category: "Lost",
+  },
+  {
     id: -1,
     title: "Match Suspended Due to Rain 🌧️",
     date: "2026-05-02",
@@ -451,7 +460,7 @@ export const newsItems = [
       "Season 1-এর Best Captain — নেতৃত্বে যিনি সবসময় এক ধাপ এগিয়ে! 💪🏏 সঠিক সিদ্ধান্ত, ঠান্ডা মাথা আর দুর্দান্ত টিম ম্যানেজমেন্ট দিয়ে পুরো টুর্নামেন্টে দলকে এগিয়ে নিয়েছেন সাফল্যের পথে। চাপের মুহূর্তেও তিনি ছিলেন দৃঢ়, দলকে দিয়েছেন আত্মবিশ্বাস আর জয়ের অনুপ্রেরণা। তার নেতৃত্বেই টিম পেয়েছে শক্ত ভিত আর জয়ের ধারাবাহিকতা! 🚀",
     image: captain,
     category: "Captain",
-  },
+  }
 ];
 
 export const galleryItems = [

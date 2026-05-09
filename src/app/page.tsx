@@ -20,6 +20,7 @@ import { newsItems, teamInfo, upcomingMatch } from "@/data/data";
 import cyber_strikers from "../../public/cyber-strikers.png";
 import Image from "next/image";
 import { useState } from "react";
+import NextBattlePlaceholder from "@/components/NextBattlePlaceholder";
 
 // ─── Category badge colors ────────────────────────────────────────────────────
 const categoryColors: Record<string, string> = {
@@ -282,9 +283,8 @@ export default function HomePage() {
       </section>
 
       {/* Upcoming Match / VS Section */}
-      <section className="py-24 px-4 sm:px-6">
+      {/* <section className="py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -301,7 +301,6 @@ export default function HomePage() {
             <div className="h-px w-24 bg-neon/40 mx-auto mt-4" />
           </motion.div>
 
-          {/* VS Banner */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -310,10 +309,8 @@ export default function HomePage() {
             className="relative border border-dark-border bg-dark-card clip-card overflow-hidden mb-8"
             style={{ boxShadow: "0 0 40px rgba(0,255,231,0.05)" }}
           >
-            {/* Top accent line */}
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon/60 to-transparent" />
 
-            {/* Match info header */}
             <div className="flex items-center justify-between px-6 py-3 border-b border-dark-border">
               <span className="text-xs text-slate-500 tracking-widest font-body">
                 {upcomingMatch.tournament}
@@ -323,9 +320,7 @@ export default function HomePage() {
               </span>
             </div>
 
-            {/* Teams VS layout */}
             <div className="grid grid-cols-3 items-center py-12 px-6">
-              {/* Team A */}
               <div className="text-center">
                 <div
                   className="w-20 h-20 sm:w-28 sm:h-28 mx-auto mb-4 border-2 border-neon/40 flex items-center justify-center clip-card"
@@ -336,15 +331,12 @@ export default function HomePage() {
                     alt="team a logo"
                     className="w-[100px] h-[100px] object-cover"
                   />
-                  {/* <Swords size={32} className="text-neon" /> */}
                 </div>
                 <h3 className="font-display font-bold text-xl sm:text-2xl text-white tracking-wider">
                   {upcomingMatch.teamA}
                 </h3>
                 <p className="text-xs text-neon mt-1 tracking-widest">HOME</p>
               </div>
-
-              {/* VS Center */}
               <div className="text-center">
                 <div className="relative">
                   <motion.p
@@ -361,7 +353,6 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Team B */}
               <div className="text-center">
                 <div
                   className="w-20 h-20 sm:w-28 sm:h-28 mx-auto mb-4 border-2 border-slate-600/40 flex items-center justify-center clip-card"
@@ -383,7 +374,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Match details */}
             <div className="flex flex-wrap items-center justify-center gap-6 px-6 py-5 border-t border-dark-border">
               <div className="flex items-center gap-2 text-slate-400 text-sm font-body">
                 <Calendar size={14} className="text-neon" />
@@ -401,11 +391,9 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Corner decoration */}
             <div className="absolute top-0 right-0 w-0 h-0 border-t-[30px] border-r-[30px] border-t-neon/20 border-r-transparent" />
           </motion.div>
 
-          {/* Countdown */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -419,7 +407,8 @@ export default function HomePage() {
             <Countdown targetDate={upcomingMatch.date} />
           </motion.div>
         </div>
-      </section>
+      </section> */}
+      <NextBattlePlaceholder />
 
       {/* About Section */}
       <section className="py-24 px-4 sm:px-6 border-t border-dark-border">

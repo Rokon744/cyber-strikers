@@ -10,7 +10,8 @@ import sobuj from "../app/assets/squad/sobuj.png";
 import nobel from "../app/assets/squad/nobel.png";
 import niloy from "../app/assets/squad/niloy.png";
 import maruf from "../app/assets/squad/maruf.png";
+import lost from "../app/assets/lost-photo.png";
 
 import terminated from "@/app/assets/terminated.png";
 
-export {juba, shimir, siam, sajid, nasim, tareq, sobuj, nobel, niloy, maruf, terminated}
+export {juba, shimir, siam, sajid, nasim, tareq, sobuj, nobel, niloy, maruf, terminated, lost}

@@ -340,8 +340,8 @@ export default function FixturesPage() {
           {[
             { label: "TEAMS", value: "7" },
             { label: "MATCHES", value: "6" },
-            { label: "COMPLETED", value: "0" },
-            { label: "REMAINING", value: "6" },
+            { label: "COMPLETED", value: "3" },
+            { label: "REMAINING", value: "3" },
           ].map(({ label, value }) => (
             <div key={label} className="text-center">
               <p className="font-display font-bold text-3xl text-neon">{value}</p>
