@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Trophy, Calendar, MapPin, Clock, CheckCircle2, Circle, ArrowRight } from "lucide-react";
+import { Trophy, Calendar, MapPin, Clock, CheckCircle2, Circle, ArrowRight, Crown } from "lucide-react";
 import { tournament } from "@/data/data";
 
 type MatchData = {
@@ -264,70 +264,115 @@ export default function FixturesPage() {
           </div>
 
           {/* Final */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.5 }}
-              className="flex items-center gap-4 mb-6"
-            >
-              <div className="h-px flex-1 bg-dark-border" />
-              <h2
-                className="font-display font-bold text-2xl tracking-[0.3em] whitespace-nowrap flex items-center gap-3"
-                style={{ color: "#ffd700", textShadow: "0 0 20px rgba(255,215,0,0.4)" }}
-              >
-                <Trophy size={20} />
-                GRAND FINAL
-                <Trophy size={20} />
-              </h2>
-              <div className="h-px flex-1 bg-dark-border" />
-            </motion.div>
+          <div className="py-10">
+      {/* Header Section */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex items-center gap-4 mb-10"
+      >
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent" />
+        <h2
+          className="font-display font-black text-3xl md:text-4xl tracking-[0.4em] whitespace-nowrap flex items-center gap-4"
+          style={{ color: "#ffd700", textShadow: "0 0 30px rgba(255,215,0,0.6)" }}
+        >
+          <Trophy className="animate-pulse" size={32} />
+          GRAND FINAL
+          <Trophy className="animate-pulse" size={32} />
+        </h2>
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent" />
+      </motion.div>
 
-            <div className="max-w-sm mx-auto">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="relative border border-yellow-500/30 bg-dark-card clip-card overflow-hidden"
-                style={{ boxShadow: "0 0 40px rgba(255,215,0,0.08)" }}
-              >
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent" />
-
-                <div className="px-4 py-2 border-b border-dark-border flex items-center justify-between">
-                  <span className="text-[10px] text-slate-600 tracking-widest font-body">FINAL</span>
-                  <Trophy size={12} className="text-yellow-500" />
-                </div>
-
-                <div className="p-4 space-y-2">
-                  {[tournament.final.teamA, tournament.final.teamB].map((name, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center justify-between p-3 border border-dark-border"
-                    >
-                      <span className={`font-display font-semibold tracking-wider text-sm ${name === "TBD" ? "text-slate-600" : "text-white"}`}>
-                        {name}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="px-4 pb-3 flex flex-wrap gap-3">
-                  <div className="flex items-center gap-1 text-slate-600 text-[10px] font-body">
-                    <Calendar size={10} className="text-yellow-500/60" />
-                    {tournament.final.date}
-                  </div>
-                  <div className="flex items-center gap-1 text-slate-600 text-[10px] font-body">
-                    <Clock size={10} className="text-yellow-500/60" />
-                    {tournament.final.time}
-                  </div>
-                  <div className="flex items-center gap-1 text-slate-600 text-[10px] font-body">
-                    <MapPin size={10} className="text-yellow-500/60" />
-                    {tournament.final.venue}
-                  </div>
-                </div>
-              </motion.div>
+      {/* Final Match Card */}
+      <div className="max-w-2xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="relative border-2 border-yellow-500/40 bg-[#05070a] rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(255,215,0,0.1)]"
+        >
+          {/* Winner Highlight Background */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(255,215,0,0.15),transparent)]" />
+          
+          {/* Top Banner */}
+          <div className="relative px-6 py-3 border-b border-yellow-500/20 bg-yellow-500/5 flex items-center justify-between">
+            <span className="text-xs text-yellow-500 font-black tracking-[0.3em]">CHAMPIONSHIP MATCH</span>
+            <div className="flex items-center gap-2">
+               <span className="text-[10px] text-yellow-200/60 uppercase">Official Result</span>
+               <div className="h-2 w-2 bg-yellow-500 rounded-full animate-ping" />
             </div>
           </div>
+
+          {/* Teams Battle Area */}
+          <div className="relative p-8 flex flex-col md:flex-row items-center justify-between gap-8">
+            
+            {/* Team A - Winner */}
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="relative">
+                <motion.div 
+                  animate={{ rotate: [0, -10, 10, 0] }}
+                  transition={{ repeat: Infinity, duration: 4 }}
+                  className="absolute -top-6 left-1/2 -translate-x-1/2 text-yellow-400"
+                >
+                  <Crown size={32} />
+                </motion.div>
+                <div className="w-24 h-24 rounded-full bg-yellow-500/10 border-2 border-yellow-500 flex items-center justify-center text-white font-bold text-2xl shadow-[0_0_20px_rgba(255,215,0,0.2)]">
+                   BT
+                </div>
+              </div>
+              <div>
+                <h3 className="text-white font-display font-bold text-lg leading-tight mb-1">{tournament.final.teamA}</h3>
+                <p className="text-yellow-500 font-black text-4xl">{tournament.final.scoreA}</p>
+              </div>
+            </div>
+
+            {/* VS Divider */}
+            <div className="flex flex-col items-center">
+               <div className="text-yellow-500/30 font-black text-xl italic mb-2">VS</div>
+               <div className="px-4 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] text-gray-400">FINAL SCORE</div>
+            </div>
+
+            {/* Team B */}
+            <div className="flex flex-col items-center text-center space-y-4 opacity-70">
+              <div className="w-24 h-24 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center text-slate-500 font-bold text-2xl">
+                 TG
+              </div>
+              <div>
+                <h3 className="text-slate-300 font-display font-bold text-lg leading-tight mb-1">{tournament.final.teamB}</h3>
+                <p className="text-slate-400 font-black text-4xl">{tournament.final.scoreB}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Victory Message */}
+          <div className="text-center pb-6">
+             <motion.div 
+               initial={{ opacity: 0 }} 
+               animate={{ opacity: 1 }} 
+               className="inline-block px-6 py-2 rounded-full bg-yellow-500 text-black font-black text-sm uppercase tracking-tighter"
+             >
+               🏆 {tournament.final.winner} ARE THE CHAMPIONS!
+             </motion.div>
+          </div>
+
+          {/* Footer Info */}
+          <div className="relative p-6 bg-yellow-500/5 border-t border-yellow-500/10 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="flex items-center justify-center gap-2 text-slate-400 text-xs">
+              <Calendar size={14} className="text-yellow-500" />
+              {tournament.final.date}
+            </div>
+            <div className="flex items-center justify-center gap-2 text-slate-400 text-xs border-x border-white/5">
+              <Clock size={14} className="text-yellow-500" />
+              {tournament.final.time}
+            </div>
+            <div className="flex items-center justify-center gap-2 text-slate-400 text-xs">
+              <MapPin size={14} className="text-yellow-500" />
+              {tournament.final.venue}
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
         </div>
 
         {/* Tournament stats bar */}
@@ -340,8 +385,8 @@ export default function FixturesPage() {
           {[
             { label: "TEAMS", value: "7" },
             { label: "MATCHES", value: "6" },
-            { label: "COMPLETED", value: "3" },
-            { label: "REMAINING", value: "3" },
+            { label: "COMPLETED", value: "6" },
+            { label: "REMAINING", value: "0" },
           ].map(({ label, value }) => (
             <div key={label} className="text-center">
               <p className="font-display font-bold text-3xl text-neon">{value}</p>
