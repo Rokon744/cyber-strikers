@@ -328,9 +328,9 @@ export const tournament = {
     date: "10 May, 2026",
     time: "3:00 PM",
     venue: "RPI CENTRAL FIELD",
-    winner: null,
-    scoreA: null,
-    scoreB: null,
+    winner: "Binary Titans - CST/7/2",
+    scoreA: "72",
+    scoreB: "69",
   },
 };
 
