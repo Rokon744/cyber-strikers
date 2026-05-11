@@ -250,7 +250,7 @@ export const players = [
 ];
 
 export const tournament = {
-  name: "Cyber Cup 2025",
+  name: "CST Tech Titans Trophy 2026 (Season-2)",
   quarterFinals: [
     {
       id: "qf1",
