@@ -273,7 +273,7 @@ export default function FixturesPage() {
       >
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent" />
         <h2
-          className="font-display font-black text-3xl md:text-4xl tracking-[0.4em] whitespace-nowrap flex items-center gap-4"
+          className="font-display font-black text-3xl md:text-4xl tracking-[0.1em] md:tracking-[0.4em] whitespace-nowrap flex items-center gap-4"
           style={{ color: "#ffd700", textShadow: "0 0 30px rgba(255,215,0,0.6)" }}
         >
           <Trophy className="animate-pulse" size={32} />
